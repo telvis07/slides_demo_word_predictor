@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Next Word Prediction using NLP</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Next Word Prediction using NLP">
+  <meta name="author" content="Telvis Calhoun">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Next Word Prediction using NLP</h1>
+    <h2>Building a next word predictor using Natural Language Processing Techniques</h2>
+    <p>Telvis Calhoun<br/>technicalelvis.com</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Goals</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Build a language model using blog, news and twitter text provided by <a href="https://www.coursera.org/learn/data-science-project/home/welcome">Data Science Capstone Course</a>.</li>
+<li>Use this language model to predict the next word as a user types - similar to the <a href="https://swiftkey.com/en">Swiftkey text messaging app</a> </li>
+<li>Create a word predictor demo using <a href="http://shiny.rstudio.com/">R and Shiny</a>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Word Prediction using N-Grams</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Assume the frequency count of &quot;data&quot; is 198, &quot;data entry&quot; is 12 and &quot;data streams&quot; is 10. We calculate the <a href="https://en.wikipedia.org/wiki/Maximum_likelihood">maximum likelihood estimate</a> (MLE) as:</p>
+
+<p>\[
+P_{mle}(gram_{N}|gram_{N-1}) = \frac{frequency(gram_{N})}{frequenc(gram_{N-1})}
+\]</p>
+
+<p>The probability of &quot;data entry&quot; is:</p>
+
+<p>\[
+P_{mle}(entry|data) = \frac{12}{198} = 0.06 = 6\%
+\]</p>
+
+<p>The probability of &quot;data streams&quot; is:
+\[
+P_{mle}(streams|data) = \frac{10}{198} = 0.05 = 5\%
+\]</p>
+
+<p>If the user types, &quot;data&quot;, the model predicts that &quot;entry&quot; is the most likely next word.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model Performance</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>TODO... Show TDR vs coverage curve</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Demo Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><a href="https://technicalelvis.shinyapps.io/prince_song_recommender/">Click here to try the Shiny App that demonstrates the recommender!</a></li>
+</ul>
+
+<p>TODO: Screenshot</p>
+
+<p>TODO...</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Goals'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Word Prediction using N-Grams'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Model Performance'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Demo Application'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
