@@ -20,7 +20,7 @@ knit        : slidify::knit2slides
 --- .class #id
 
 ## Word Prediction using N-Grams
-Assume the frequency count of "data" is 198, "data entry" is 12 and "data streams" is 10. We calculate the [maximum likelihood estimate](https://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) as:
+- Assume the frequency count of "data" is 198, "data entry" is 12 and "data streams" is 10. We calculate the [maximum likelihood estimate](https://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) as:
 
 $$
 P_{mle}(gram_{N}|gram_{N-1}) = \frac{frequency(gram_{N})}{frequenc(gram_{N-1})}
