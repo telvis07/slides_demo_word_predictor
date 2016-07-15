@@ -33,7 +33,7 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>Next Word Prediction using NLP</h1>
-    <h2>Building a next word predictor using Natural Language Processing Techniques</h2>
+    <h2>Building a word predictor using Natural Language Processing in R</h2>
     <p>Telvis Calhoun<br/>technicalelvis.com</p>
   </hgroup>
   <article></article>  
@@ -61,15 +61,9 @@
     <h2>Word Prediction using N-Grams</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Assume the frequency count of &quot;data&quot; is 198, &quot;data entry&quot; is 12 and &quot;data streams&quot; is 10. We calculate the <a href="https://en.wikipedia.org/wiki/Maximum_likelihood">maximum likelihood estimate</a> (MLE) as:</li>
-</ul>
+    <p>Assume the training data shows the frequency of &quot;data&quot; is 198, &quot;data entry&quot; is 12 and &quot;data streams&quot; is 10. We calculate the <a href="https://en.wikipedia.org/wiki/Maximum_likelihood">maximum likelihood estimate</a> (MLE) as:</p>
 
-<p>\[
-P_{mle}(gram_{N}|gram_{N-1}) = \frac{frequency(gram_{N})}{frequenc(gram_{N-1})}
-\]</p>
-
-<p>The probability of &quot;data entry&quot; is:</p>
+<p>The probability of &quot;data entry&quot;:</p>
 
 <p>\[
 P_{mle}(entry|data) = \frac{12}{198} = 0.06 = 6\%
@@ -88,10 +82,23 @@ P_{mle}(streams|data) = \frac{10}{198} = 0.05 = 5\%
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Model Performance</h2>
+    <h2>Modeling</h2>
   </hgroup>
   <article data-timings="">
-    <p>TODO... Show TDR vs coverage curve</p>
+    <ol>
+<li>Generate 2-grams, 3-grams and 4-grams.</li>
+<li>Select n-grams that account for 66% of word instances. This reduces the size of the models.</li>
+<li>Calculate the maximum likelihood estimate (MLE) for words for each model.</li>
+</ol>
+
+<h2>Prediction</h2>
+
+<ol>
+<li>Load the ngram models</li>
+<li>Tokenize and preprocess user input.</li>
+<li>Implement <a href="http://www.aclweb.org/anthology/D07-1090.pdf">stupid backoff</a> starting on 4-gram model backing off to 3-gram model backing off to 2-gram model.</li>
+<li>Return 3 words with largest MLE</li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
@@ -130,7 +137,7 @@ P_{mle}(streams|data) = \frac{10}{198} = 0.05 = 5\%
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Model Performance'>
+        data-slide=3 title='Modeling'>
          3
       </a>
     </li>

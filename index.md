@@ -1,6 +1,6 @@
 ---
 title       : Next Word Prediction using NLP
-subtitle    : Building a next word predictor using Natural Language Processing Techniques
+subtitle    : Building a word predictor using Natural Language Processing in R
 author      : Telvis Calhoun
 job         : technicalelvis.com
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -20,13 +20,9 @@ knit        : slidify::knit2slides
 --- .class #id
 
 ## Word Prediction using N-Grams
-- Assume the frequency count of "data" is 198, "data entry" is 12 and "data streams" is 10. We calculate the [maximum likelihood estimate](https://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) as:
+Assume the training data shows the frequency of "data" is 198, "data entry" is 12 and "data streams" is 10. We calculate the [maximum likelihood estimate](https://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) as:
 
-$$
-P_{mle}(gram_{N}|gram_{N-1}) = \frac{frequency(gram_{N})}{frequenc(gram_{N-1})}
-$$
-
-The probability of "data entry" is:
+The probability of "data entry":
 
 $$
 P_{mle}(entry|data) = \frac{12}{198} = 0.06 = 6\%
@@ -42,9 +38,16 @@ If the user types, "data", the model predicts that "entry" is the most likely ne
 --- .class #id
 
 
-## Model Performance
+## Modeling
+1. Generate 2-grams, 3-grams and 4-grams.
+2. Select n-grams that account for 66% of word instances. This reduces the size of the models.
+3. Calculate the maximum likelihood estimate (MLE) for words for each model.
 
-TODO... Show TDR vs coverage curve
+## Prediction
+1. Load the ngram models
+2. Tokenize and preprocess user input.
+3. Implement [stupid backoff](http://www.aclweb.org/anthology/D07-1090.pdf) starting on 4-gram model backing off to 3-gram model backing off to 2-gram model.
+4. Return 3 words with largest MLE
 
 
 --- .class #id
