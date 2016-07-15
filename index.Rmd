@@ -52,7 +52,11 @@ TODO... Show TDR vs coverage curve
 
 ## Demo Application
 
-- [Click here to try the Shiny App that demonstrates the recommender!](https://technicalelvis.shinyapps.io/prince_song_recommender/)
+- [Click here to try the Shiny App that demonstrates the recommender!](https://technicalelvis.shinyapps.io/shiny_demo_word_predictor/)
 
-TODO: Screenshot
-
+```{r fig.width=10, fig.height=7, fig.align="center", echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG("./images/shiny_app_screen_shot.png")
+grid.raster(img)
+```

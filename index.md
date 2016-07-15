@@ -20,7 +20,7 @@ knit        : slidify::knit2slides
 --- .class #id
 
 ## Word Prediction using N-Grams
-Assume the frequency count of "data" is 198, "data entry" is 12 and "data streams" is 10. We calculate the [maximum likelihood estimate](https://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) as:
+- Assume the frequency count of "data" is 198, "data entry" is 12 and "data streams" is 10. We calculate the [maximum likelihood estimate](https://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) as:
 
 $$
 P_{mle}(gram_{N}|gram_{N-1}) = \frac{frequency(gram_{N})}{frequenc(gram_{N-1})}
@@ -52,8 +52,6 @@ TODO... Show TDR vs coverage curve
 
 ## Demo Application
 
-- [Click here to try the Shiny App that demonstrates the recommender!](https://technicalelvis.shinyapps.io/prince_song_recommender/)
+- [Click here to try the Shiny App that demonstrates the recommender!](https://technicalelvis.shinyapps.io/shiny_demo_word_predictor/)
 
-TODO: Screenshot
-
-TODO...
+<img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
