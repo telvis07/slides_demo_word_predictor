@@ -55,6 +55,6 @@ If the user types, "data", the model predicts that "entry" is the most likely ne
 
 ## Demo Application
 
-- [Click here to try the Shiny App that demonstrates the recommender!](https://technicalelvis.shinyapps.io/shiny_demo_word_predictor/)
+- [Click here to try the Shiny App that demonstrates the predictor!](https://technicalelvis.shinyapps.io/shiny_demo_word_predictor/)
 
 <img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
